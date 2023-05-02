@@ -1,23 +1,20 @@
-import useEnhancedEffect from "@mui/material/utils/useEnhancedEffect";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
-    
-    const [value, setValue] = useState<T>(() => {
-        const jsonValue = localStorage.getItem(key);
-        if (jsonValue != null) return JSON.parse(jsonValue)
+  const [value, setValue] = useState<T>(() => {
+    const jsonValue = localStorage.getItem(key);
+    if (jsonValue != null) return JSON.parse(jsonValue);
 
-        if (initialValue === "function") {
-            return  (initialValue as () => T)() 
-        } else {
-            return initialValue
-        }
-    })
+    if (initialValue === "function") {
+      return (initialValue as () => T)();
+    } else {
+      return initialValue;
+    }
+  });
 
-    useEffect(() => {
-        localStorage.setItem(key, JSON.stringify(value))
-    }, [key, value])
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
 
-    return [value, setValue] as [typeof value, typeof setValue]
-
+  return [value, setValue] as [typeof value, typeof setValue];
 }
