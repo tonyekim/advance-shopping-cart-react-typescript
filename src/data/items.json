@@ -1,25 +1,25 @@
 [
     {
         "id": 1,
-        "name": "Fried Dish",
+        "name": "Ferarri",
         "price": 10.99,
         "imgUrl": "/imgs/img1.jpg"
     },
     {
         "id": 2,
-        "name": "Fresh Vegies",
+        "name": "Ghost",
         "price": 1199,
         "imgUrl": "/imgs/img2.jpg"
     },
     {
         "id": 3,
-        "name": "Sardine ",
+        "name": "Audi",
         "price": 1.05,
         "imgUrl": "/imgs/img3.jpg"
     },
     {
         "id": 4,
-        "name": "Veg Salad",
+        "name": "Ferarri Vultron",
         "price": 14000,
         "imgUrl": "/imgs/img4.jpg"
     }
